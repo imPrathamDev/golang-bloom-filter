@@ -42,7 +42,7 @@ func (b *Bloom) hash(key string, seed int) uint {
 	h := murmur3.New64WithSeed(uint32(seed))
 	h.Write([]byte(key))
 	hashValue := h.Sum64()
-fmt.Println("len", uint(hashValue) % uint(b.size))
+	fmt.Println("len", uint(hashValue) % uint(b.size))
 	return uint(hashValue) % uint(b.size)
 }
 
